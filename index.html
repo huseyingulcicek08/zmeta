@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Zmeta | Yakında hizmetinizde!">
+    <meta name="keywords" content="zmeta, yazılım, donanım, teknoloji, danışmanlık">
+    <meta name="author" content="Zmeta Teknoloji">
+
     <title>Zmeta | Yakında</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,16 +16,22 @@
 
 <header>
     <img src="zmeta_logo_cropped.png" class="logo" alt="Zmeta Logo">
-    <nav class="navbar">
-        <a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a>
-        <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
-        <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+    <nav class="navbar" id="mainMenu">
+        <ul>
+            <li><a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a></li>
+            <li><a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
+            <li><a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+        </ul>
         <div class="lang-switch">
             <button onclick="setLanguage('tr')">TR</button>
             <button onclick="setLanguage('en')">EN</button>
         </div>
     </nav>
 </header>
+
+
 
 <div class="container">
     <h1 data-tr="Web Sitemiz Yapım Aşamasında" data-en="Our Website is Under Construction">Web Sitemiz Yapım Aşamasında</h1>
@@ -31,28 +42,69 @@
 </div>
 
 <script>
+    // Geri sayım tarihi
     const countdownDate = new Date("2025-09-01T00:00:00").getTime();
-    const countdown = document.getElementById("countdown");
-    setInterval(() => {
+    const countdownEl = document.getElementById("countdown");
+
+    // Dil ayarını başta al
+    let currentLang = 'tr';
+
+    // Geri sayım fonksiyonu
+    function updateCountdown() {
         const now = new Date().getTime();
         const distance = countdownDate - now;
-        if (distance < 0) {
-            countdown.innerHTML = "<span data-tr='Yayındayız!' data-en='We are live!'>Yayındayız!</span>";
+
+        if (distance <= 0) {
+            countdownEl.innerHTML = currentLang === 'tr'
+                ? "<span data-tr='Yayındayız!' data-en='We are live!'>Yayındayız!</span>"
+                : "<span data-tr='Yayındayız!' data-en='We are live!'>We are live!</span>";
             return;
         }
+
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdown.innerHTML = days + "g " + hours + "s " + minutes + "d " + seconds + "s ";
-    }, 1000);
 
+        if (currentLang === 'tr') {
+            countdownEl.innerHTML = `${days}g ${hours}s ${minutes}d ${seconds}sn`;
+        } else {
+            countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+    }
+
+    // Dil değiştirme
     function setLanguage(lang) {
+        currentLang = lang;
         document.querySelectorAll('[data-tr]').forEach(el => {
             el.innerText = el.getAttribute(`data-${lang}`);
         });
+        updateCountdown(); // Geri sayımı da dil ile güncelle
     }
+
+    // Menü toggle (mobil)
+    function toggleMenu() {
+        const menu = document.getElementById('mainMenu');
+        menu.classList.toggle('show');
+    }
+
+    // Menü dışına tıklanırsa kapat
+    document.addEventListener('click', function (e) {
+        const menu = document.getElementById('mainMenu');
+        const toggle = document.querySelector('.menu-toggle');
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove('show');
+        }
+    });
+
+    // Sayfa yüklendiğinde
+    document.addEventListener('DOMContentLoaded', function () {
+        setLanguage('tr');
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    });
 </script>
+
 
 </body>
 </html>

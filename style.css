@@ -1,66 +1,116 @@
-
+/* Sayfa genel stil */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: #fff;
     text-align: center;
+    opacity: 0;
+    animation: fadeInPage 1s ease-in-out forwards;
 }
 
+/* Logo */
 .logo {
-    width: 130px;
-    margin: 20px auto;
-    display: block;
+    width: 140px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInLogo 1s ease-out forwards;
 }
 
+/* Animasyonlar */
+@keyframes fadeInLogo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInPage {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header alanı */
 header {
-    background-color: #111;
-    padding: 10px 0;
-}
-
-.navbar {
+    background-color: #0e1a1f;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     flex-wrap: wrap;
 }
 
+/* Menü (masaüstü için) */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+/* Menü linkleri */
 .navbar a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 14px;
     font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .navbar a:hover {
-    background: #444;
+    background: #00d8ff;
+    color: #111;
 }
 
+/* Dil butonları */
 .lang-switch button {
-    margin-left: 5px;
+    margin-left: 8px;
     padding: 5px 10px;
     border: none;
-    background-color: #333;
-    color: #fff;
+    background-color: #00d8ff;
+    color: #111;
     cursor: pointer;
     border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
+.lang-switch button:hover {
+    background-color: #fff;
+    color: #111;
+}
+
+/* Sayfa içeriği */
 .container {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
+/* Geri sayım */
 #countdown {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 20px;
 }
 
+/* Link stilleri */
 a {
     color: #00d8ff;
     text-decoration: none;
@@ -71,3 +121,48 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Hamburger buton (mobil için) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: auto;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        display: none;
+        background-color: #0e1a1f;
+        padding: 10px 20px;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar li {
+        display: block;
+    }
+}

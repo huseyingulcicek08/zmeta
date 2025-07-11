@@ -3,6 +3,9 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Zmeta | Yakında hizmetinizde!">
+    <meta name="keywords" content="zmeta, yazılım, donanım, teknoloji, danışmanlık">
+    <meta name="author" content="Zmeta Teknoloji">
     <title>Hakkımızda | Zmeta</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,16 +13,22 @@
 
 <header>
     <img src="zmeta_logo_cropped.png" class="logo" alt="Zmeta Logo">
-    <nav class="navbar">
-        <a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a>
-        <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
-        <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+    <nav class="navbar" id="mainMenu">
+        <ul>
+            <li><a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a></li>
+            <li><a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
+            <li><a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
+        </ul>
         <div class="lang-switch">
             <button onclick="setLanguage('tr')">TR</button>
             <button onclick="setLanguage('en')">EN</button>
         </div>
     </nav>
 </header>
+
+
 
 <div class="container">
     <h1 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h1>
