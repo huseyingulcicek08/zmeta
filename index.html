@@ -1,22 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zmeta | Yakında</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="index.html">Anasayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="iletisim.html">İletişim</a>
-</nav>
+<header>
+    <img src="zmeta_logo_cropped.png" class="logo" alt="Zmeta Logo">
+    <nav class="navbar">
+        <a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a>
+        <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+        <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+        <div class="lang-switch">
+            <button onclick="setLanguage('tr')">TR</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </nav>
+</header>
 
 <div class="container">
-    <img src="zmeta_logo_cropped.png" class="logo" alt="Zmeta Logo">
-    <h1>Web Sitemiz Yapım Aşamasında</h1>
-    <p>Daha iyi bir deneyim için çok yakında yayındayız!</p>
+    <h1 data-tr="Web Sitemiz Yapım Aşamasında" data-en="Our Website is Under Construction">Web Sitemiz Yapım Aşamasında</h1>
+    <p data-tr="Daha iyi bir deneyim için çok yakında yayındayız!" data-en="We’ll be live very soon to serve you better.">
+        Daha iyi bir deneyim için çok yakında yayındayız!
+    </p>
     <div id="countdown"></div>
 </div>
 
@@ -27,7 +37,7 @@
         const now = new Date().getTime();
         const distance = countdownDate - now;
         if (distance < 0) {
-            countdown.innerHTML = "<span>Yayındayız!</span>";
+            countdown.innerHTML = "<span data-tr='Yayındayız!' data-en='We are live!'>Yayındayız!</span>";
             return;
         }
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -36,6 +46,12 @@
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         countdown.innerHTML = days + "g " + hours + "s " + minutes + "d " + seconds + "s ";
     }, 1000);
+
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-tr]').forEach(el => {
+            el.innerText = el.getAttribute(`data-${lang}`);
+        });
+    }
 </script>
 
 </body>

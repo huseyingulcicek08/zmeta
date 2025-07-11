@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -7,19 +8,34 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <a href="index.html">Anasayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="iletisim.html">İletişim</a>
-</nav>
+<header>
+    <img src="zmeta_logo_cropped.png" class="logo" alt="Zmeta Logo">
+    <nav class="navbar">
+        <a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a>
+        <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+        <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+        <div class="lang-switch">
+            <button onclick="setLanguage('tr')">TR</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </nav>
+</header>
 
 <div class="container">
-    <h1>Hakkımızda</h1>
-    <p>
-        Zmeta, teknoloji ve dijital çözümler alanında yenilikçi projeler üretmek üzere kurulmuş bir şirkettir.
-        Müşterilerimize modern, etkili ve kullanıcı dostu çözümler sunmak için çalışıyoruz.
+    <h1 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h1>
+    <p data-tr="Zmeta, teknoloji ve dijital çözümler alanında yenilikçi projeler üretmek üzere kurulmuştur."
+       data-en="Zmeta was founded to develop innovative projects in technology and digital solutions.">
+        Zmeta, teknoloji ve dijital çözümler alanında yenilikçi projeler üretmek üzere kurulmuştur.
     </p>
 </div>
+
+<script>
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-tr]').forEach(el => {
+            el.innerText = el.getAttribute(`data-${lang}`);
+        });
+    }
+</script>
 
 </body>
 </html>
