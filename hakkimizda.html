@@ -78,7 +78,13 @@
             el.innerText = el.getAttribute(`data-${lang}`);
         });
     }
+
+    // Sayfa ilk yüklendiğinde varsayılan dil Türkçe olsun
+    document.addEventListener('DOMContentLoaded', function () {
+        setLanguage('tr');
+    });
 </script>
+
 
 </body>
 </html>
