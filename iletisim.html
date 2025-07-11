@@ -1,10 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>İletişim | Zmeta</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+        }
+
+        .contact-card h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        .contact-item a {
+            color: #00d8ff;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+        }
+
+        .contact-icons {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,8 +53,21 @@
 </header>
 
 <div class="container">
-    <h1 data-tr="İletişim" data-en="Contact">İletişim</h1>
-    <p>Email: <a href="mailto:info@zmeta.com.tr">info@zmeta.com.tr</a></p>
+    <div class="contact-card">
+        <h1 data-tr="İletişim" data-en="Contact">İletişim</h1>
+        <div class="contact-item">
+            📧 <span data-tr="E-posta" data-en="Email">E-posta</span>: 
+            <a href="mailto:info@zmeta.com.tr">info@zmeta.com.tr</a>
+        </div>
+        <div class="contact-item">
+            📞 <span data-tr="Telefon" data-en="Phone">Telefon</span>: 
+            <a href="tel:+905.........">+90 5.. ... .. ..</a>
+        </div>
+        <div class="contact-item">
+            📍 <span data-tr="Adres" data-en="Address">Adres</span>: 
+            <span data-tr="Karabuk, Türkiye" data-en="Karabuk, Türkiye">Karabük, Türkiye</span>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -32,6 +76,11 @@
             el.innerText = el.getAttribute(`data-${lang}`);
         });
     }
+
+    // Sayfa yüklendiğinde varsayılan dil Türkçe olsun
+    document.addEventListener('DOMContentLoaded', function () {
+        setLanguage('tr');
+    });
 </script>
 
 </body>
