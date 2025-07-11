@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zmeta | Yakında Buradayız</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-switch">
+        <button onclick="setLanguage('tr')">TR</button>
+        <button onclick="setLanguage('en')">EN</button>
+    </div>
+
+    <div class="container">
+        <img src="zmeta_logo_cropped.png" alt="Zmeta Logo" class="logo">
+        <h1 data-tr="Web Sitemiz Yapım Aşamasında" data-en="Our Website is Under Construction">Web Sitemiz Yapım Aşamasında</h1>
+        <p data-tr="Daha iyi bir deneyim için çok yakında yayındayız!" data-en="We’ll be live very soon to serve you better.">
+            Daha iyi bir deneyim için çok yakında yayındayız!
+        </p>
+        <div id="countdown"></div>
+
+        <section class="about">
+            <h2 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h2>
+            <p data-tr="Zmeta, teknoloji ve dijital çözümler alanında yenilikçi projeler üretmek üzere kurulmuştur."
+               data-en="Zmeta was founded to develop innovative projects in technology and digital solutions.">
+                Zmeta, teknoloji ve dijital çözümler alanında yenilikçi projeler üretmek üzere kurulmuştur.
+            </p>
+        </section>
+
+        <section class="contact">
+            <h2 data-tr="İletişim" data-en="Contact">İletişim</h2>
+            <p>Email: <a href="mailto:info@zmeta.com.tr">info@zmeta.com.tr</a></p>
+        </section>
+    </div>
+
+    <script>
+        // Geri sayım tarihi (Yayına alınma tarihi)
+        const countdownDate = new Date("2025-09-01T00:00:00").getTime();
+
+        const countdown = document.getElementById("countdown");
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                countdown.innerHTML = "<span>Yayındayız!</span>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = days + "g " + hours + "s " + minutes + "d " + seconds + "s ";
+        }, 1000);
+
+        // Dil değiştirme fonksiyonu
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-tr]').forEach(el => {
+                el.innerText = el.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
+</body>
+</html>
