@@ -1,84 +1,49 @@
-/* Sayfa genel stil */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+    background: #0f2027;
     color: #fff;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInPage 1s ease-in-out forwards;
 }
 
-/* Logo */
-.logo {
-    width: 140px;
-    height: auto;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInLogo 1s ease-out forwards;
-}
-
-/* Animasyonlar */
-@keyframes fadeInLogo {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInPage {
-    to {
-        opacity: 1;
-    }
-}
-
-/* Header alanı */
 header {
-    background-color: #0e1a1f;
+    background-color: rgba(14, 26, 31, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Menü (masaüstü için) */
+.logo {
+    width: 140px;
+}
+
 .navbar {
     display: flex;
-    align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-.navbar li {
-    display: inline;
-}
-
-/* Menü linkleri */
 .navbar a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    padding: 8px 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .navbar a:hover {
-    background: #00d8ff;
-    color: #111;
+    color: #00d8ff;
 }
 
-/* Dil butonları */
 .lang-switch button {
     margin-left: 8px;
     padding: 5px 10px;
@@ -88,81 +53,201 @@ header {
     cursor: pointer;
     border-radius: 4px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: 0.3s;
 }
 
 .lang-switch button:hover {
-    background-color: #fff;
+    background: #fff;
     color: #111;
 }
 
-/* Sayfa içeriği */
-.container {
+.hero {
+    position: relative;
+    height: 100vh;
+   background: url('img/hero-bg.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 32, 39, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
-/* Geri sayım */
-#countdown {
-    font-size: 1.5em;
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s ease;
+}
+
+.btn-primary {
+    background: #00d8ff;
+    padding: 10px 20px;
+    color: #111;
     font-weight: bold;
-    margin-top: 20px;
-}
-
-/* Link stilleri */
-a {
-    color: #00d8ff;
+    border-radius: 25px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-a:hover {
-    color: #fff;
-    text-decoration: underline;
+.btn-primary:hover {
+    background: #fff;
 }
 
-/* Hamburger buton (mobil için) */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background: #203a43;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.feature {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+
+.contact {
+    padding: 60px 20px;
+    background: #2c5364;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input, 
+.contact textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer {
+    padding: 20px;
+    background: #0e1a1f;
+    text-align: center;
+    font-size: 0.9em;
+}
+
 .menu-toggle {
     display: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    background: none;
-    border: none;
-    margin-left: auto;
 }
 
-/* Mobil uyumluluk */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu-toggle {
-        display: block;
-        margin-bottom: 10px;
-    }
-
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
         display: none;
-        background-color: #0e1a1f;
-        padding: 10px 20px;
+        flex-direction: column;
+        width: 100%;
     }
-
     .navbar.show {
         display: flex;
     }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar li {
+    .menu-toggle {
         display: block;
+        font-size: 28px;
+        color: #fff;
+        background: none;
+        border: none;
     }
 }
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.about-hero {
+    background: url('img/about-hero.jpeg') center/cover no-repeat;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    background: #203a43;
+    align-items: center;
+}
+.about-text {
+    flex: 1 1 400px;
+    padding: 20px;
+}
+.about-image {
+    flex: 1 1 400px;
+    text-align: center;
+}
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.mv-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #2c5364;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+.mv-card {
+    flex: 1 1 300px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.timeline {
+    background: #203a43;
+    padding: 60px 20px;
+    text-align: center;
+}
+.timeline-container {
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+}
+.timeline-item {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-left: 4px solid #00d8ff;
+    position: relative;
+    text-align: left;
+    border-radius: 6px;
+}
+.timeline-item .year {
+    font-weight: bold;
+    color: #00d8ff;
+}
+

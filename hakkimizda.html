@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Zmeta | Yakında hizmetinizde!">
-    <meta name="keywords" content="zmeta, yazılım, donanım, teknoloji, danışmanlık">
+    <meta name="description" content="Zmeta | Hakkımızda">
+    <meta name="keywords" content="zmeta, yazılım, donanım, teknoloji, danışmanlık, hakkında">
     <meta name="author" content="Zmeta Teknoloji">
     <title>Hakkımızda | Zmeta</title>
     <link rel="stylesheet" href="style.css">
@@ -18,7 +17,7 @@
     <nav class="navbar" id="mainMenu">
         <ul>
             <li><a href="index.html" data-tr="Anasayfa" data-en="Home">Anasayfa</a></li>
-            <li><a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
+            <li><a href="hakkimizda.html" class="active" data-tr="Hakkımızda" data-en="About">Hakkımızda</a></li>
             <li><a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a></li>
         </ul>
         <div class="lang-switch">
@@ -28,72 +27,97 @@
     </nav>
 </header>
 
+<!-- Hero Section -->
+<section class="hero about-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h1>
+        <p data-tr="Zmeta: Geleceği Şekillendiren Teknoloji" data-en="Zmeta: Shaping the Future of Technology">
+            Zmeta: Geleceği Şekillendiren Teknoloji
+        </p>
+    </div>
+</section>
 
+<!-- About Content -->
+<section class="about-section">
+    <div class="about-text">
+        <h2 data-tr="Biz Kimiz?" data-en="Who We Are?">Biz Kimiz?</h2>
+        <p data-tr="Zmeta, 2025 yılında Türkiye'de kurulmuş; yazılım, donanım ve teknoloji danışmanlığı başta olmak üzere geniş faaliyet alanına sahip, dinamik ve çok yönlü bir şirkettir. 
+                    Resmi izinlerle hem dijital hem de geleneksel alanlarda profesyonel hizmet sunar."
+           data-en="Zmeta was founded in 2025 in Türkiye as a dynamic and versatile company specializing in software, hardware, and technology consulting. 
+                    With official authorizations, it operates professionally in both digital and traditional sectors.">
+            Zmeta, 2025 yılında Türkiye'de kurulmuş; yazılım, donanım ve teknoloji danışmanlığı başta olmak üzere geniş faaliyet alanına sahip, dinamik ve çok yönlü bir şirkettir. 
+            Resmi izinlerle hem dijital hem de geleneksel alanlarda profesyonel hizmet sunar.
+        </p>
+    </div>
+    <div class="about-image">
+        <img src="img/about-side.jpeg" alt="Zmeta Team">
+    </div>
+</section>
 
-<div class="container">
-    <h1 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h1>
-    <p data-tr="Zmeta, 2025 yılında Türkiye'de kurulmuş; yazılım, donanım ve teknoloji danışmanlığı başta olmak üzere çok geniş bir faaliyet alanına sahip, dinamik ve çok yönlü bir şirkettir.
-        
-        Kuruluş sürecinde devletin ilgili kurumlarından neredeyse tüm sektörler için faaliyet izinlerini alarak, hem dijital hem de geleneksel alanlarda yasal ve profesyonel altyapısını oluşturmuştur.
-        
-        Gerek yazılım ve donanım geliştirme, gerekse inşaat, araç alım-satımı, tarım ürünleri ticareti gibi farklı sektörlerde yetkinlik sahibidir.
+<!-- Mission & Vision -->
+<section class="mv-section">
+    <div class="mv-card">
+        <h3 data-tr="Misyonumuz" data-en="Our Mission">Misyonumuz</h3>
+        <p data-tr="Müşterilerimize bugünün değil, yarının teknolojik çözümlerini sunmak." 
+           data-en="Delivering not just today's, but tomorrow's technological solutions.">
+            Müşterilerimize bugünün değil, yarının teknolojik çözümlerini sunmak.
+        </p>
+    </div>
+    <div class="mv-card">
+        <h3 data-tr="Vizyonumuz" data-en="Our Vision">Vizyonumuz</h3>
+        <p data-tr="İnovasyonla geleceğe yön veren lider bir teknoloji firması olmak."
+           data-en="Becoming a leading technology company that shapes the future with innovation.">
+            İnovasyonla geleceğe yön veren lider bir teknoloji firması olmak.
+        </p>
+    </div>
+</section>
 
-        Zmeta’nın temel uzmanlık alanı:
-        - Yazılım Geliştirme
-        - Donanım ve IoT Sistemleri
-        - Kurumsal Teknoloji Danışmanlığıdır.
+<!-- Timeline -->
+<section class="timeline">
+    <h2 data-tr="Şirket Tarihçesi" data-en="Company Timeline">Şirket Tarihçesi</h2>
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <span class="year">2025</span>
+            <p data-tr="Zmeta kuruldu ve tüm resmi faaliyet izinlerini aldı." 
+               data-en="Zmeta was founded and obtained all official operational permits.">
+               Zmeta kuruldu ve tüm resmi faaliyet izinlerini aldı.
+            </p>
+        </div>
+        <div class="timeline-item">
+            <span class="year">2026</span>
+            <p data-tr="Yazılım, donanım ve IoT projelerinde ilk büyük başarılar elde edildi."
+               data-en="First major achievements in software, hardware, and IoT projects.">
+               Yazılım, donanım ve IoT projelerinde ilk büyük başarılar elde edildi.
+            </p>
+        </div>
+        <div class="timeline-item">
+            <span class="year">2027</span>
+            <p data-tr="Global pazarlara açılım ve yurtdışı iş birlikleri başladı."
+               data-en="Expansion into global markets and start of international partnerships.">
+               Global pazarlara açılım ve yurtdışı iş birlikleri başladı.
+            </p>
+        </div>
+    </div>
+</section>
 
-        Ancak bünyesinde yer alan esnek ve yasal olarak yetkilendirilmiş iş kolları sayesinde, sektörel sınırlamaları aşarak her türlü projeye hızlı şekilde entegre olabilmektedir.
-
-        Zmeta, inovasyonu iş modelinin merkezine alır; müşterilerine sadece bugünün değil, geleceğin teknolojik çözümlerini sunmayı hedefler."
-
-       data-en="Zmeta was established in Türkiye in 2025 as a dynamic and versatile company primarily focused on software, hardware, and technology consulting.
-
-        With official licenses acquired from relevant government institutions across a wide range of sectors, Zmeta operates with full legal and professional infrastructure, enabling activities in both digital and traditional industries.
-
-        In addition to software and hardware development, the company is authorized in fields such as construction, vehicle trade, and agricultural product commerce.
-
-        Zmeta’s core expertise lies in:
-        - Software Development
-        - Hardware & IoT Systems
-        - Corporate Technology Consulting.
-
-        With this flexibility, Zmeta can quickly adapt to diverse projects without sectoral limitations.
-
-        Innovation is at the heart of Zmeta’s business model, aiming to deliver not only today’s but also tomorrow’s technology solutions.">
-
-        Zmeta, 2025 yılında Türkiye'de kurulmuş; yazılım, donanım ve teknoloji danışmanlığı başta olmak üzere çok geniş bir faaliyet alanına sahip, dinamik ve çok yönlü bir şirkettir.
-
-        Kuruluş sürecinde devletin ilgili kurumlarından neredeyse tüm sektörler için faaliyet izinlerini alarak, hem dijital hem de geleneksel alanlarda yasal ve profesyonel altyapısını oluşturmuştur.
-
-        Gerek yazılım ve donanım geliştirme, gerekse inşaat, araç alım-satımı, tarım ürünleri ticareti gibi farklı sektörlerde yetkinlik sahibidir.
-
-        Zmeta’nın temel uzmanlık alanı:
-        - Yazılım Geliştirme
-        - Donanım ve IoT Sistemleri
-        - Kurumsal Teknoloji Danışmanlığıdır.
-
-        Ancak bünyesinde yer alan esnek ve yasal olarak yetkilendirilmiş iş kolları sayesinde, sektörel sınırlamaları aşarak her türlü projeye hızlı şekilde entegre olabilmektedir.
-
-        Zmeta, inovasyonu iş modelinin merkezine alır; müşterilerine sadece bugünün değil, geleceğin teknolojik çözümlerini sunmayı hedefler.
-    </p>
-</div>
-
-
+<footer>
+    <p>© 2025 Zmeta Teknoloji | All Rights Reserved</p>
+</footer>
 
 <script>
+    let currentLang = 'tr';
     function setLanguage(lang) {
+        currentLang = lang;
         document.querySelectorAll('[data-tr]').forEach(el => {
             el.innerText = el.getAttribute(`data-${lang}`);
         });
     }
-
-    // Sayfa ilk yüklendiğinde varsayılan dil Türkçe olsun
-    document.addEventListener('DOMContentLoaded', function () {
-        setLanguage('tr');
-    });
+    function toggleMenu() {
+        document.getElementById('mainMenu').classList.toggle('show');
+    }
+    document.addEventListener('DOMContentLoaded', () => setLanguage('tr'));
 </script>
-
 
 </body>
 </html>
